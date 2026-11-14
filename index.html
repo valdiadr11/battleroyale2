@@ -35,19 +35,19 @@ input,textarea{background:#0b1226;border:2px solid #F2A900;border-radius:12px;pa
 #banner{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);font-size:clamp(28px,7vw,56px);font-weight:900;color:#F2A900;text-shadow:0 4px 0 #8a5a00,0 0 30px #000;opacity:0;pointer-events:none;white-space:nowrap}
 @keyframes bn{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}15%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
 #hurt{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 120px 40px #ef4444;opacity:0;transition:opacity .45s}
-#quiz{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(94vw,640px);background:linear-gradient(#111a33f5,#0b1020f5);border:3px solid #F2A900;border-radius:18px;padding:12px;text-align:center;box-shadow:0 0 40px #F2A90066}
-#qt{font-size:12px;font-weight:800;color:#f87171;letter-spacing:2px}#qw{font-size:34px;font-weight:900;color:#F2A900;margin:2px 0 8px}
+#quiz{display:none;position:absolute;left:50%;top:44px;z-index:20;transform:translateX(-50%);width:min(68vw,560px);background:linear-gradient(#111a33f5,#0b1020f5);border:3px solid #F2A900;border-radius:16px;padding:8px 10px;text-align:center;box-shadow:0 0 40px #F2A90066}
+#qt{font-size:12px;font-weight:800;color:#f87171;letter-spacing:2px}#qw{font-size:clamp(22px,6vh,30px);font-weight:900;color:#F2A900;margin:0 0 6px}
 #qo{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-#qo button{background:#1e293b;border:2px solid #475569;color:#fff;font-size:18px;font-weight:800;padding:15px 6px;border-radius:12px;box-shadow:0 4px 0 #0f172a}
+#qo button{background:#1e293b;border:2px solid #475569;color:#fff;font-size:clamp(14px,4.4vh,18px);font-weight:800;padding:clamp(8px,2.6vh,13px) 4px;border-radius:12px;box-shadow:0 3px 0 #0f172a}
 #qo button:active,#qo button.sel{background:#F2A900;color:#111;transform:translateY(3px)}
 #qbar{height:10px;background:#334155;border-radius:6px;margin-top:10px;overflow:hidden}#qbar i{display:block;height:100%;background:linear-gradient(90deg,#ef4444,#facc15);width:100%}
 #dead{display:none;position:absolute;inset:0;background:#000b;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:#ef4444;text-align:center;pointer-events:none}
-.jb{position:fixed;bottom:18px;width:132px;height:132px;border-radius:50%;background:radial-gradient(#ffffff26,#ffffff0d);border:3px solid #ffffff66;touch-action:none}
-.jb i{position:absolute;left:36px;top:36px;width:60px;height:60px;border-radius:50%;background:radial-gradient(#ffd24d,#c88a00);box-shadow:0 3px 8px #000a;pointer-events:none}
-#jl{left:24px}#jr{right:24px}
+.jb{position:fixed;bottom:14px;width:100px;height:100px;border-radius:50%;background:radial-gradient(#ffffff18,#ffffff06);border:2px solid #ffffff3d;opacity:.7;touch-action:none;transition:opacity .2s}
+.jb i{position:absolute;left:28px;top:28px;width:44px;height:44px;border-radius:50%;background:radial-gradient(#ffd24d,#c88a00);box-shadow:0 3px 8px #000a;pointer-events:none}
+#jl{left:18px}#jr{right:18px}
 .rb{position:fixed;border-radius:50%;font-weight:900;border:3px solid #fff9;touch-action:none;color:#fff;box-shadow:0 5px 0 #0008}
-#fire{right:176px;bottom:30px;width:88px;height:88px;background:radial-gradient(#f87171,#b91c1c);font-size:13px}
-#heal{right:192px;bottom:130px;width:66px;height:66px;background:radial-gradient(#4ade80,#15803d);font-size:12px}
+#fire{right:130px;bottom:22px;width:72px;height:72px;background:radial-gradient(#f87171,#b91c1c);font-size:11px;opacity:.85}.qz .jb{opacity:.15}.qz #fire{display:none}
+
 .t .ctl,.t #mm,.t #hudL{display:none}.t #live{display:block}
 #rot{display:none;position:fixed;inset:0;z-index:99;background:#0b1020;align-items:center;justify-content:center;text-align:center;font-size:22px;font-weight:900;color:#F2A900;padding:20px;touch-action:none}
 @media (orientation:portrait){body.p #rot{display:flex}}
@@ -81,7 +81,7 @@ tr.me td{background:#F2A90033}tr.w td{color:#F2A900;font-weight:900;background:#
 <div id="end" class="scr" style="justify-content:flex-start"><div class="logo" style="font-size:32px">🏆 LEADERBOARD AKHIR</div><div id="win" style="font-size:22px;font-weight:900;color:#F2A900"></div><div id="etab" style="width:100%;display:flex;justify-content:center"></div><div id="ebtn" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"></div></div>
 
 <div id="game"><canvas id="cv"></canvas><canvas id="mm" width="96" height="96"></canvas>
-<div id="hudL"><span id="hav" style="font-size:26px"></span><div><div id="hname" style="font-weight:800;font-size:13px"></div><div id="hpbar"><i id="hpf"></i><b id="hpt"></b></div><div id="meds" style="font-size:13px;margin-top:2px"></div></div></div>
+<div id="hudL"><span id="hav" style="font-size:26px"></span><div><div id="hname" style="font-weight:800;font-size:13px"></div><div id="hpbar"><i id="hpf"></i><b id="hpt"></b></div></div></div>
 <div id="hudC"><span id="tm">7:00</span><span id="alv"></span><span id="zn"></span></div>
 <div id="feed"></div><div id="live"></div>
 <div id="arrow"><i></i></div><div id="hurt"></div>
@@ -89,7 +89,7 @@ tr.me td{background:#F2A90033}tr.w td{color:#F2A900;font-weight:900;background:#
 <div id="quiz"><div id="qt"></div><div id="qw"></div><div id="qo"></div><div id="qbar"><i></i></div></div>
 <div id="dead"></div>
 <div id="jl" class="jb ctl"><i></i></div><div id="jr" class="jb ctl"><i></i></div>
-<button id="fire" class="rb ctl">🔫 TEMBAK</button><button id="heal" class="rb ctl">💊 HEAL</button></div>
+<button id="fire" class="rb ctl">🔫 TEMBAK</button></div>
 
 <script>
 const $=id=>document.getElementById(id),MAP=4000,CT=2000,PR=14,SP=200,AL='ABCDEFGHJKMNPQRSTUVWXYZ23456789';
@@ -146,8 +146,7 @@ function hMsg(c,m){
  const p=H.pl[c.pid];if(!p||H.phase!='play'||!p.al)return;
  if(m.t=='in'){let x=+m.mx||0,y=+m.my||0;const l=Math.hypot(x,y);if(l>1){x/=l;y/=l}p.mx=x;p.my=y;p.a=+m.a||0}
  else if(m.t=='fire')doFire(p,+m.a||0);
- else if(m.t=='ans'){if(p.duel&&p.duel.s==p.id)endDuel(p,m.i)}
- else if(m.t=='heal'&&p.meds>0&&p.hp<100){p.meds--;p.hp=Math.min(100,p.hp+40)}}
+ else if(m.t=='ans'){if(p.duel&&p.duel.s==p.id)endDuel(p,m.i)}}
 function drop(c){if(!c.pid)return;const id=c.pid;delete H.conns[id];const p=H.pl[id];
  if(H.phase=='lobby'){delete H.pl[id];lobUp()}else if(H.phase=='play'&&p&&p.al){kill(id,0,'terputus');checkEnd()}}
 function startGame(){ac();const ids=Object.keys(H.pl);if(ids.length<2){alert('Minimal 2 siswa untuk memulai.');return}
@@ -165,7 +164,7 @@ function zoneAt(el){const k=Math.min(Math.floor(el/45),7);if(!k)return{x:CT,y:CT
  return{x:a[0]+(b[0]-a[0])*f,y:a[1]+(b[1]-a[1])*f,r:H.R[k-1]+(H.R[k]-H.R[k-1])*f,k}}
 function tick(){const dt=.05,now=Date.now(),el=(now-H.t0)/1000,z=zoneAt(el);
  for(const p of Object.values(H.pl)){if(!p.al)continue;const sl=p.duel?.4:1;const[nx,ny]=col(M,p.x+p.mx*SP*sl*dt,p.y+p.my*SP*sl*dt);p.x=nx;p.y=ny;
-  M.C.forEach((c,i)=>{if(H.cr[i]&&p.meds<3&&Math.hypot(c.x-p.x,c.y-p.y)<30){H.cr[i]=0;p.meds++}});
+  M.C.forEach((c,i)=>{if(H.cr[i]&&p.hp<100&&Math.hypot(c.x-p.x,c.y-p.y)<30){H.cr[i]=0;p.hp=Math.min(100,p.hp+25);send(p.id,{t:'hl'})}});
   if(Math.hypot(p.x-z.x,p.y-z.y)>z.r){p.hp-=(4+z.k*1.5)*dt;if(p.hp<=0)kill(p.id,0,'Terkena zona')}
   if(p.al&&p.duel&&p.duel.s==p.id&&now>p.duel.end)endDuel(p,-1)}
  const al=Object.values(H.pl).filter(p=>p.al);V.z=[z.x,z.y,z.r];V.cr=H.cr.join('');V.tm=Math.max(0,420-el);V.al=al.length;
@@ -183,8 +182,8 @@ function doFire(p,a){const now=Date.now();if(p.duel||now<p.cd)return;p.cd=now+40
  const q=nextQ();p.duel=best.duel={s:p.id,t:best.id,ci:q.ci,w:q.w,end:now+6000};
  send(p.id,{t:'quiz',w:q.w,o:q.o,tn:best.name,tid:best.id});send(best.id,{t:'warn',by:p.id})}
 function endDuel(s,i){const d=s.duel;if(!d)return;const t=H.pl[d.t];s.duel=null;t.duel=null;s.tot++;
- if(i===d.ci){s.ok++;t.hp-=50;send(t.id,{t:'res',x:1,m:'Kamu terkena tembakan!'});
-  if(t.hp<=0){s.kills++;kill(t.id,s,d.w);send(s.id,{t:'res',ok:1,m:'ELIMINASI! +1 kill'})}else send(s.id,{t:'res',ok:1,m:'Tembakan telak! -50 HP target'})}
+ if(i===d.ci){s.ok++;t.hp-=25;send(t.id,{t:'res',x:1,m:'Kamu terkena tembakan!'});
+  if(t.hp<=0){s.kills++;kill(t.id,s,d.w);send(s.id,{t:'res',ok:1,m:'ELIMINASI! +1 kill'})}else send(s.id,{t:'res',ok:1,m:'Tembakan telak! -25 HP target'})}
  else{s.cd=Date.now()+2000;send(s.id,{t:'res',ok:0,m:i<0?'Waktu habis! Senjata macet 2 detik':'Salah! Senjata macet 2 detik'});send(t.id,{t:'res',x:1,m:'Tembakan meleset! Kamu bebas.'})}
  checkEnd()}
 function kill(id,by,w){const v=H.pl[id];if(!v||!v.al)return;const n=Object.values(H.pl).filter(p=>p.al).length;
@@ -222,11 +221,12 @@ function cMsg(m){
   if(m.ph!=ph0){ph0=m.ph;if(m.ph>0){SFX.zone();toast('⚠ Zona aman menyusut!')}}}
  else if(m.t=='quiz'){dueling=1;lockId=m.tid;answered=0;$('qt').textContent='🎯 TARGET LOCKED: '+m.tn.toUpperCase();$('qw').textContent=m.w;
   $('qo').innerHTML='';m.o.forEach((o,i)=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>{if(answered)return;answered=1;b.className='sel';conn.send({t:'ans',i})};$('qo').appendChild(b)});
-  const bar=$('qbar').firstChild;bar.style.transition='none';bar.style.width='100%';bar.offsetWidth;bar.style.transition='width 6s linear';bar.style.width='0%';$('quiz').style.display='block'}
+  const bar=$('qbar').firstChild;bar.style.transition='none';bar.style.width='100%';bar.offsetWidth;bar.style.transition='width 6s linear';bar.style.width='0%';$('quiz').style.display='block';$('game').classList.add('qz')}
  else if(m.t=='warn'){dueling=1;warnBy=m.by;$('warn').style.display='block';$('arrow').style.display='block';try{navigator.vibrate(200)}catch(e){}}
- else if(m.t=='res'){$('quiz').style.display='none';$('warn').style.display='none';$('arrow').style.display='none';dueling=0;lockId=0;warnBy=0;if(!m.x)(m.ok?SFX.ding:SFX.buzz)();toast(m.m)}
+ else if(m.t=='res'){$('quiz').style.display='none';$('game').classList.remove('qz');$('warn').style.display='none';$('arrow').style.display='none';dueling=0;lockId=0;warnBy=0;if(!m.x)(m.ok?SFX.ding:SFX.buzz)();toast(m.m)}
+ else if(m.t=='hl'){bp(660,.12,'sine',.15,990);toast('💚 +25 HP')}
  else if(m.t=='feed')addFeed(m.m);
- else if(m.t=='dead'){$('quiz').style.display='none';$('warn').style.display='none';$('arrow').style.display='none';dueling=0;$('dead').innerHTML='☠ KAMU GUGUR<br>Peringkat #'+m.r+'<br><small style="font-size:14px;color:#fff">Menunggu pertandingan selesai…</small>';$('dead').style.display='flex'}
+ else if(m.t=='dead'){$('quiz').style.display='none';$('game').classList.remove('qz');$('warn').style.display='none';$('arrow').style.display='none';dueling=0;$('dead').innerHTML='☠ KAMU GUGUR<br>Peringkat #'+m.r+'<br><small style="font-size:14px;color:#fff">Menunggu pertandingan selesai…</small>';$('dead').style.display='flex'}
  else if(m.t=='end'){ended=0;SFX.win();showEnd(m.rows)}}
 /* ---------- UI ---------- */
 function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(()=>e.style.display='none',2200)}
@@ -239,11 +239,11 @@ function showEnd(rows){running=0;$('quiz').style.display='none';$('warn').style.
  $('ebtn').innerHTML=role=='t'?'<button class="b" onclick="csv()">⬇ Download Hasil (CSV)</button><button class="b b2" onclick="again()">🔁 Main Lagi</button>':'<span style="color:#94a3b8">Menunggu guru…</span>';
  if(role=='t')SFX.win()}
 setInterval(()=>{if(!running)return;const m=V.pl[me],t=V.tm|0,el=420-t;$('tm').textContent='⏱ '+Math.floor(t/60)+':'+String(t%60).padStart(2,'0');$('alv').textContent='👥 '+V.al;$('zn').textContent=el<315?'🔵 Zona: '+(45-el%45)+'s':'🔵 Zona final';
- if(role=='p'&&m){const hp=Math.max(0,Math.round(m.hp));$('hpf').style.width=hp+'%';$('hpt').textContent=hp+' HP';$('meds').textContent='💊'.repeat(m.meds||0)||'—';$('hname').textContent=m.name;$('hav').innerHTML=av(me)}
+ if(role=='p'&&m){const hp=Math.max(0,Math.round(m.hp));$('hpf').style.width=hp+'%';$('hpt').textContent=hp+' HP';$('hname').textContent=m.name;$('hav').innerHTML=av(me)}
  if(role=='t')$('live').innerHTML='<b style="color:#F2A900">LIVE</b><br>'+Object.values(H.pl).sort((a,b)=>b.al-a.al||b.kills-a.kills).slice(0,8).map(p=>`${p.al?'🟢':'💀'} ${esc(p.name)} · ${p.kills}K`).join('<br>')},250);
 /* ---------- controls ---------- */
-function joy(el,s,isR){const k=el.firstChild,R=50;
- const up=e=>{const dx=e.clientX-s.cx,dy=e.clientY-s.cy,d=Math.hypot(dx,dy)||1,m=Math.min(d,R)/R;s.x=dx/d*m;s.y=dy/d*m;s.m=m;k.style.transform=`translate(${s.x*45}px,${s.y*45}px)`};
+function joy(el,s,isR){const k=el.firstChild,R=40;
+ const up=e=>{const dx=e.clientX-s.cx,dy=e.clientY-s.cy,d=Math.hypot(dx,dy)||1,m=Math.min(d,R)/R;s.x=dx/d*m;s.y=dy/d*m;s.m=m;k.style.transform=`translate(${s.x*34}px,${s.y*34}px)`};
  el.onpointerdown=e=>{e.preventDefault();ac();el.setPointerCapture(e.pointerId);const b=el.getBoundingClientRect();s.cx=b.left+b.width/2;s.cy=b.top+b.height/2;s.on=1;up(e)};
  el.onpointermove=e=>{if(s.on)up(e)};
  el.onpointerup=()=>{if(!s.on)return;s.on=0;const m=s.m;k.style.transform='';if(isR&&m>.35)fire();s.x=s.y=s.m=0};
@@ -251,7 +251,6 @@ function joy(el,s,isR){const k=el.firstChild,R=50;
 joy($('jl'),st.l,0);joy($('jr'),st.r,1);
 function fire(){if(role!='p'||!conn||!conn.open||answered&&dueling)return;SFX.shot();conn.send({t:'fire',a:aim})}
 $('fire').onpointerdown=e=>{e.preventDefault();ac();fire()};
-$('heal').onpointerdown=e=>{e.preventDefault();if(conn&&conn.open)conn.send({t:'heal'})};
 addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=1;if(e.key==' '){fire();e.preventDefault()}});addEventListener('keyup',e=>keys[e.key.toLowerCase()]=0);
 $('cv').addEventListener('pointermove',e=>{if(e.pointerType=='mouse'&&role=='p')aim=Math.atan2(e.clientY-innerHeight*.55,e.clientX-innerWidth/2)});
 $('cv').addEventListener('pointerdown',e=>{if(e.pointerType=='mouse')fire()});
@@ -277,7 +276,7 @@ function buildWorld(){if(WG)SC.remove(WG);WG=new THREE.Group();SC.add(WG);
  [[CT,-10,MAP+40,20],[CT,MAP+10,MAP+40,20]].forEach(a=>bx(a[2],140,a[3],'#1f2a3d',a[0],70,a[1]));[[-10,CT],[MAP+10,CT]].forEach(a=>bx(20,140,MAP+40,'#1f2a3d',a[0],70,a[1]));
  const n=M.T.length,tr=new THREE.InstancedMesh(new THREE.CylinderGeometry(4,5,30,6),mt('#6b4423'),n),lv=new THREE.InstancedMesh(new THREE.ConeGeometry(1,1,7),mt('#1f7a2e'),n),d=new THREE.Object3D();
  M.T.forEach((t,i)=>{d.position.set(t.x,15,t.y);d.scale.set(1,1,1);d.updateMatrix();tr.setMatrixAt(i,d.matrix);d.position.set(t.x,24+t.r*1.6,t.y);d.scale.set(t.r*1.4,t.r*3.2,t.r*1.4);d.updateMatrix();lv.setMatrixAt(i,d.matrix)});WG.add(tr,lv);
- CR=M.C.map(c=>{const g=new THREE.Group();bx(22,18,22,'#f8fafc',0,9,0,g);bx(6,19,23,'#dc2626',0,9.5,0,g);bx(23,19,6,'#dc2626',0,9.5,0,g);g.position.set(c.x,0,c.y);WG.add(g);return g})}
+ CR=M.C.map(c=>{const g=new THREE.Group();bx(22,18,22,'#f8fafc',0,9,0,g);bx(6,19,23,'#16a34a',0,9.5,0,g);bx(23,19,6,'#16a34a',0,9.5,0,g);g.position.set(c.x,0,c.y);WG.add(g);return g})}
 function mkChar(id,name){const k=skin(id),g=new THREE.Group(),rot=new THREE.Group(),f=document.createElement('canvas');f.width=f.height=32;const x=f.getContext('2d');x.fillStyle=k[0];x.fillRect(0,0,32,32);x.fillStyle='#111';x.fillRect(8,11,4,6);x.fillRect(20,11,4,6);x.fillRect(10,22,12,2);x.fillRect(8,20,2,2);x.fillRect(22,20,2,2);
  const ft=new THREE.CanvasTexture(f);ft.magFilter=THREE.NearestFilter;const sm=mt(k[0]),hm=[sm,sm,sm,sm,new THREE.MeshLambertMaterial({map:ft}),sm];
  const head=new THREE.Mesh(BG,hm);head.scale.set(16,16,16);head.position.y=54;rot.add(head);
@@ -294,7 +293,7 @@ function addTracer(s){const L=Math.hypot(s[2]-s[0],s[3]-s[1])||1,m=new THREE.Mes
 function clearFX(){FX.forEach(f=>SC.remove(f.m));FX=[]}
 function resize(){R3.setSize(innerWidth,innerHeight,false);CAM.aspect=innerWidth/innerHeight;CAM.updateProjectionMatrix()}addEventListener('resize',resize);
 function beginView(){show('game');running=1;for(const id in PM)SC.remove(PM[id].g);PM={};buildWorld();resize();SC.fog.near=role=='t'?6000:700;SC.fog.far=role=='t'?16000:2300;
- $('hurt').style.opacity=0;banner(role=='t'?'PERTANDINGAN DIMULAI!':'MULAI! Bertahan hidup!');last=performance.now();requestAnimationFrame(loop)}
+ $('hurt').style.opacity=0;$('game').classList.remove('qz');banner(role=='t'?'PERTANDINGAN DIMULAI!':'MULAI! Bertahan hidup!');last=performance.now();requestAnimationFrame(loop)}
 const mm=$('mm').getContext('2d');
 function loop(now){if(!running)return;requestAnimationFrame(loop);const dt=Math.min(.05,(now-last)/1000);last=now;const isT=role=='t',mp=V.pl[me],sc=isT?3.2:1;
  if(!isT&&mp&&mp.al){const[ix,iy]=inp(),sl=dueling?.4:1,[nx,ny]=col(M,lp.x+ix*SP*sl*dt,lp.y+iy*SP*sl*dt);lp.x=nx;lp.y=ny}
